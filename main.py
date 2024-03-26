@@ -65,7 +65,7 @@ def fetch_org_owners(org_name):
 
 def fetch_repo_admins(full_repo_name):
     # Fetch direct collaborators with admin permissions
-    admins = fetch_paginated_api_data(f'https://api.github.com/repos/{full_repo_name}/collaborators?affiliation=direct&per_page=100')
+    admins = fetch_paginated_api_data(f'https://api.github.com/repos/{full_repo_name}/collaborators?role=admin&per_page=100')
     return fetch_user_details(admins)
 
 def fetch_secret_scanning_alerts(full_repo_name):
