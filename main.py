@@ -106,7 +106,7 @@ if __name__ == '__main__':
     try:
         main()
     except requests.exceptions.RequestException as e:
-        print("An error occurred:", e)
-        print("Retrying after 60 seconds...")
+        logger.error("An error occurred:", e)
+        logger.error("Retrying after 60 seconds...")
         time.sleep(60)
         main()
